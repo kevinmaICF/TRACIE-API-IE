@@ -1,40 +1,37 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace TRACIE_API_AC.Models
+namespace TRACIE_API_IE.Models
 {
     public class IE_tblMBThread
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public IE_tblMBThread()
-        {
-            this.IE_ascThreadUser = new HashSet<IE_ascThreadUser>();
-            this.IE_tblMBPost = new HashSet<IE_tblMBPost>();
-        }
     
+        [Key]
         public int ThreadID { get; set; }
         public Nullable<int> DirID { get; set; }
+        [ForeignKey("ThreadID")]
+        public IE_tblMBDir IE_tblMBDir { get; set; }
+
+        [Column(TypeName = "varchar(300)")]
         public string Text { get; set; }
+        [Column(TypeName = "varchar(300)")]
         public string Title { get; set; }
         public Nullable<int> StatusID { get; set; }
-        public Nullable<System.DateTime> DateCreated { get; set; }
-        public Nullable<System.DateTime> DateUpdated { get; set; }
+        public Nullable<DateTime> DateCreated { get; set; }
+        public Nullable<DateTime> DateUpdated { get; set; }
         public Nullable<int> PostCount { get; set; }
         public Nullable<int> FileCount { get; set; }
         public Nullable<int> TypeID { get; set; }
         public Nullable<int> CreatedBy { get; set; }
         public Nullable<int> UpdatedBy { get; set; }
-        public Nullable<System.DateTime> DateLatest { get; set; }
+        public Nullable<DateTime> DateLatest { get; set; }
+        [Column(TypeName = "varchar(3500)")]
         public string Description { get; set; }
         public Nullable<int> Sticky { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<IE_ascThreadUser> IE_ascThreadUser { get; set; }
-        public virtual IE_tblMBDir IE_tblMBDir { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<IE_tblMBPost> IE_tblMBPost { get; set; }
     }
 }
