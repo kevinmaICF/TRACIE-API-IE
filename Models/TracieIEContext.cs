@@ -4,8 +4,8 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
-using TRACIE_API_AC.Models;
 using TRACIE_API_IE.Models;
+
 
 namespace TRACIE_API_IE.Models
 {
@@ -33,8 +33,9 @@ namespace TRACIE_API_IE.Models
         public DbSet<IE_luEventType> IE_luEventType { get; set; }
         public DbSet<IE_luMBType> IE_luMBType { get; set; }
         public DbSet<IE_luNotificationTemplate> IE_luNotificationTemplate { get; set; }
-        public DbSet<IE_tblEvent> IE_tblEvent { get; set; }
+        public DbSet<IE_tblLogErr> IE_tblLogErr { get; set; }
         public DbSet<IE_tblLogEvent> IE_tblLogEvent { get; set; }
+        public DbSet<IE_tblLogEventUser> IE_tblLogEventUser { get; set; }
         public DbSet<IE_tblMBDir> IE_tblMBDir { get; set; }
         public DbSet<IE_tblMBFile> IE_tblMBFile { get; set; }
         public DbSet<IE_tblMBPost> IE_tblMBPost { get; set; }
@@ -42,6 +43,7 @@ namespace TRACIE_API_IE.Models
         public DbSet<IE_tblNotification> IE_tblNotification { get; set; }
         public DbSet<IE_tblNotificationQueue> IE_tblNotificationQueue { get; set; }
         public DbSet<IE_tblPendingRejectedUser> IE_tblPendingRejectedUser { get; set; }
+        
 
         public DbSet<IE_tblUserContactInformation> IE_tblUserContactInformation { get; set; }
         public DbSet<IE_tblUserContactInformationUnregistered> IE_tblUserContactInformationUnregistered { get; set; }
@@ -65,7 +67,6 @@ namespace TRACIE_API_IE.Models
             modelBuilder.Entity<IE_luMBType>().Property(sample => sample.DateUpdated).HasColumnType("datetime");
             modelBuilder.Entity<IE_luNotificationTemplate>().Property(sample => sample.DateCreated).HasColumnType("datetime");
             modelBuilder.Entity<IE_luNotificationTemplate>().Property(sample => sample.DateUpdated).HasColumnType("datetime");
-            modelBuilder.Entity<IE_tblEvent>().Property(sample => sample.DateCreated).HasColumnType("datetime");
             modelBuilder.Entity<IE_tblLogEvent>().Property(sample => sample.DateCreated).HasColumnType("datetime");
             modelBuilder.Entity<IE_tblMBDir>().Property(sample => sample.DateCreated).HasColumnType("datetime");
             modelBuilder.Entity<IE_tblMBDir>().Property(sample => sample.DateUpdated).HasColumnType("datetime");
@@ -82,6 +83,7 @@ namespace TRACIE_API_IE.Models
             modelBuilder.Entity<IE_tblNotification>().Property(sample => sample.DateUpdated).HasColumnType("datetime");
             modelBuilder.Entity<IE_tblNotificationQueue>().Property(sample => sample.DateCreated).HasColumnType("datetime");
             modelBuilder.Entity<IE_tblNotificationQueue>().Property(sample => sample.DateSent).HasColumnType("datetime");
+            modelBuilder.Entity<IE_tblLogEventUser>().Property(sample => sample.DateCreated).HasColumnType("datetime");
             modelBuilder.Entity<IE_tblPendingRejectedUser>().Property(sample => sample.DateCreated).HasColumnType("datetime");
             modelBuilder.Entity<IE_tblPendingRejectedUser>().Property(sample => sample.DateUpdated).HasColumnType("datetime");
             modelBuilder.Entity<IE_tblUserContactInformation>().Property(sample => sample.DateCreated).HasColumnType("datetime");

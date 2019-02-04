@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace TRACIE_API_AC.Models
+namespace TRACIE_API_IE.Models
 {
     public class IE_tblUserContactInformationUnregistered
     {

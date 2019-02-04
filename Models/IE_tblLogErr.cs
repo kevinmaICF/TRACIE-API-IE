@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -7,29 +7,33 @@ using System.Threading.Tasks;
 
 namespace TRACIE_API_IE.Models
 {
-    public class IE_tblLogEvent
+    public class IE_tblLogErr
     {
         [Key]
-        public int EventRecID { get; set; }
-        public int EventTypeID { get; set; }
+        public int ErrRecID { get; set; }
         [Column(TypeName = "varchar(100)")]
-        public string EventLocation { get; set; }
+        public string ErrLocation { get; set; }
+        [Column(TypeName = "varchar(2000)")]
+        public string ErrMessage { get; set; }
+        [Column(TypeName = "varchar(100)")]
+        public string ErrTitle { get; set; }
         [Column(TypeName = "varchar(500)")]
-        public string EventDesc { get; set; }
+        public string ErrDesc { get; set; }
         [Column(TypeName = "varchar(150)")]
-        public string EventTitle { get; set; }
+        public string ErrVal1 { get; set; }
         [Column(TypeName = "varchar(150)")]
-        public string EventVar1 { get; set; }
+        public string ErrVal2 { get; set; }
         [Column(TypeName = "varchar(150)")]
-        public string EventVar2 { get; set; }
+        public string ErrVal3 { get; set; }
         [Column(TypeName = "varchar(150)")]
-        public string EventVar4 { get; set; }
+        public string ErrVal4 { get; set; }
         [Column(TypeName = "varchar(150)")]
-        public string EventVar5 { get; set; }
-
+        public string ErrVal5 { get; set; }
         public System.Nullable<DateTime> DateCreated { get; set; }
         public System.Nullable<int> UserID { get; set; }
         public System.Nullable<int> ServerID { get; set; }
-        public string EventVar3 { get; set; }
+        public System.Nullable<int> EventTypeID { get; set; }
+
+
     }
 }

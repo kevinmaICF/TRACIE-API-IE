@@ -6,6 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="filter\" />
+    <Folder Include="StaticClasses\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 
